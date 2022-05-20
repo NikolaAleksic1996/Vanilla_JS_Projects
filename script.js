@@ -6,7 +6,6 @@ function addToCart(element) {
     let name = mainEl.querySelector('h3').innerText
     let quantity = mainEl.querySelector('input').value
     let cartItems = document.querySelector('.cart-items')
-    //console.log(typeof(quantity)) // string nije dobro da se poredi kao broj treba ga pretvoriti u int
 
     if(parseInt(quantity) > 0) {
         price = price.substring(1)
@@ -16,12 +15,12 @@ function addToCart(element) {
         cartItems.innerHTML += `<div class="cart-single-item">
                                     <h3>${name}</h3>
                                     <p>$${price} x ${quantity} = $<span>${total}</span></p>
-                                    <button class="remove-item" onclick="removeFromCart(this)">Ukloni</button>
+                                    <button class="remove-item" onclick="removeFromCart(this)">Remove</button>
                                 </div>`
 
         document.querySelector('.total').innerText = `Total: $${allTotal}`
 
-        element.innerText = 'Dodato'
+        element.innerText = 'Added'
         element.setAttribute('disabled', 'true')
     }
     else{
@@ -38,7 +37,7 @@ function removeFromCart(element) {
     vegetables.forEach(function (vege) {
         if(vege.querySelector('.si-content h3').innerText === name){
             vege.querySelector('.actions input').value = 0
-            vege.querySelector('.actions button').innerText = 'Dodaj'
+            vege.querySelector('.actions button').innerText = 'Add'
             vege.querySelector('.actions button').removeAttribute('disabled')
         }
     })
