@@ -1,5 +1,5 @@
 Vanilla JS Projects
 
-"# market-shopping-cart" ,
+"# market-shopping-cart"
 
 "# drumming events"
